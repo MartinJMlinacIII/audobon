@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'mysqli'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,8 +52,8 @@ return [
             'prefix'   => '',
         ],
 
-        'mysql' => [
-            'driver'    => 'mysql',
+        'mysqli' => [
+            'driver'    => 'mysqli',
             'host'      => env('DB_HOST', 'localhost'),
             'database'  => env('DB_DATABASE', 'forge'),
             'username'  => env('DB_USERNAME', 'forge'),

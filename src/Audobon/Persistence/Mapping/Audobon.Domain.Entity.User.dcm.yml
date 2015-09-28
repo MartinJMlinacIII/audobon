@@ -1,0 +1,46 @@
+Audobon\Domain\Entity\User:
+  type: entity
+  table: User
+  id:
+    id:
+      type: integer
+      nullable: false
+      options:
+        unsigned: false
+      id: true
+      column: id
+      generator:
+        strategy: IDENTITY
+  fields:
+    name:
+      type: string
+      nullable: false
+      length: 50
+      options:
+        default: ''
+      column: name
+    email:
+      type: string
+      nullable: false
+      length: 50
+      options:
+        default:  ''
+      column: email
+    phoneNumber:
+      type: string
+      nullable: false
+      length: 50
+      options:
+        default:  ''
+      column: phoneNumber
+  oneToMany:
+    sightings:
+      targetEntity: Audobon\Domain\Entity\Sighting
+      mappedBy: user
+
+
+
+
+
+
+

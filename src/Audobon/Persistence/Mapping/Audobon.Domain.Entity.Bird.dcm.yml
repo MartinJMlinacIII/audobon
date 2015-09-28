@@ -1,0 +1,32 @@
+Audobon\Domain\Entity\Bird:
+  type: entity
+  table: Bird
+  id:
+    id:
+      type: integer
+      nullable: false
+      options:
+        unsigned: false
+      id: true
+      column: id
+      generator:
+        strategy: IDENTITY
+  fields:
+    species:
+      type: string
+      nullable: false
+      options:
+        default: ''
+      column: species
+    description:
+      type: string
+      nullable: false
+      options:
+        default:  ''
+      column: description
+  oneToMany:
+    sightings:
+      targetEntity: Audobon\Domain\Entity\Sighting
+      mappedBy: bird
+
+

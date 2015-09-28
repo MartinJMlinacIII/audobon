@@ -1,0 +1,53 @@
+Audobon\Domain\Entity\Sighting:
+  type: entity
+  table: Sighting
+  id:
+    id:
+      type: integer
+      nullable: false
+      options:
+        unsigned: false
+      id: true
+      column: id
+      generator:
+        strategy: IDENTITY
+  fields:
+    dateTime:
+      type: datetime
+      nullable: false
+      column: dateTime
+    location:
+      type: string
+      nullable: false
+      length: 100
+      options:
+        default:  ''
+      column: location
+    birdId:
+      type: integer
+      nullable: false
+      column: birdId
+    userId:
+      type: integer
+      nullable: false
+      column: userId
+  manyToOne:
+    bird:
+      targetEntity: Audobon\Domain\Entity\Bird
+      inversedBy: sightings
+      joinColumn:
+        name: birdId
+        referencedColoumnName:  id
+    user:
+      targetEntity: Audobon\Domain\Entity\User
+      inversedBy: sightings
+      joinColumn:
+        name: userId
+        referencedColoumnName:  id
+
+
+
+
+
+
+
