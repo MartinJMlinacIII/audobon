@@ -14,24 +14,15 @@ Audobon\Domain\Entity\User:
   fields:
     name:
       type: string
-      nullable: false
       length: 50
-      options:
-        default: ''
       column: name
     email:
       type: string
-      nullable: false
       length: 50
-      options:
-        default:  ''
       column: email
     phoneNumber:
       type: string
-      nullable: false
       length: 50
-      options:
-        default:  ''
       column: phoneNumber
   oneToMany:
     sightings:
