@@ -12,10 +12,16 @@ Audobon\Domain\Entity\Sighting:
       generator:
         strategy: IDENTITY
   fields:
-    dateTime:
-      type: datetime
+    date:
+      type: string
       nullable: false
-      column: dateTime
+      length: 100
+      column: date
+    time:
+      type: string
+      nullable: false
+      length: 100
+      column: time
     location:
       type: string
       nullable: false

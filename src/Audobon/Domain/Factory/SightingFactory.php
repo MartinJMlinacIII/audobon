@@ -6,16 +6,21 @@
  * Time: 2:26 PM
  */
 namespace Audobon\Domain\Factory;
-use Audobon\Domain\Enitity
+use Audobon\Domain\Entity\Sighting;
+use Audobon\Domain\Entity\Bird;
+use Audobon\Domain\Entity\User;
 
-class Sighting
+class SightingFactory
 {
-    public function createSighting(){
-        $sighting = new Sighting;
+    public function createSighting(Bird $newBird, User $newUser){
+        $sighting = new Sighting();
+        $sighting->setDate("");
+        $sighting->setTime("");
+        $sighting->setLocation("");
+        $sighting->setBird($newBird);
+        $sighting->setUser($newUser);
 
-
-
-
+        return $sighting;
     }
 }
 

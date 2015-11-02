@@ -136,7 +136,9 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Atrauzzi\LaravelDoctrine\ServiceProvider::class,
+        'Illuminate\Html\HtmlServiceProvider',
+        LaravelDoctrine\ORM\DoctrineServiceProvider::class,
+        LaravelDoctrine\Migrations\MigrationsServiceProvider::class,
 
 
         /*
@@ -195,7 +197,10 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-        'EntityManager' => Atrauzzi\LaravelDoctrine\Support\Facades\Doctrine::class,
-
+        'EntityManager' => LaravelDoctrine\ORM\Facades\EntityManager::class,
+        'Registry'      => LaravelDoctrine\ORM\Facades\Registry::class,
+        'Doctrine'      => LaravelDoctrine\ORM\Facades\Doctrine::class,
+        'Form'          => 'Illuminate\Html\FormFacade',
+        'HTML'          => 'Illuminate\Html\HtmlFacade'
     ],
 ];

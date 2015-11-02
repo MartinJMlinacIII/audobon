@@ -25,32 +25,27 @@ class Sighting
     /**
      * @var string
      */
-    private $location;
+    private $location = '';
 
     /**
-     * @var string
+     * @var integer
      */
-    private $name;
+    private $birdId;
 
     /**
-     * @var string
+     * @var integer
      */
-    private $email;
+    private $userId;
 
     /**
-     * @var string
+     * @var \Audobon\Domain\Entity\Bird
      */
-    private $phoneNumber;
+    private $bird;
 
     /**
-     * @var string
+     * @var \Audobon\Domain\Entity\User
      */
-    private $species;
-
-    /**
-     * @var string
-     */
-    private $description;
+    private $user;
 
 
     /**
@@ -136,123 +131,99 @@ class Sighting
     }
 
     /**
-     * Set name
+     * Set birdId
      *
-     * @param string $name
+     * @param integer $birdId
      *
      * @return Sighting
      */
-    public function setName($name)
+    public function setBirdId($birdId)
     {
-        $this->name = $name;
+        $this->birdId = $birdId;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get birdId
      *
-     * @return string
+     * @return integer
      */
-    public function getName()
+    public function getBirdId()
     {
-        return $this->name;
+        return $this->birdId;
     }
 
     /**
-     * Set email
+     * Set userId
      *
-     * @param string $email
+     * @param integer $userId
      *
      * @return Sighting
      */
-    public function setEmail($email)
+    public function setUserId($userId)
     {
-        $this->email = $email;
+        $this->userId = $userId;
 
         return $this;
     }
 
     /**
-     * Get email
+     * Get userId
      *
-     * @return string
+     * @return integer
      */
-    public function getEmail()
+    public function getUserId()
     {
-        return $this->email;
+        return $this->userId;
     }
 
     /**
-     * Set phoneNumber
+     * Set bird
      *
-     * @param string $phoneNumber
+     * @param \Audobon\Domain\Entity\Bird $bird
      *
      * @return Sighting
      */
-    public function setPhoneNumber($phoneNumber)
+    public function setBird(\Audobon\Domain\Entity\Bird $bird = null)
     {
-        $this->phoneNumber = $phoneNumber;
+        $this->bird = $bird;
 
         return $this;
     }
 
     /**
-     * Get phoneNumber
+     * Get bird
      *
-     * @return string
+     * @return \Audobon\Domain\Entity\Bird
      */
-    public function getPhoneNumber()
+    public function getBird()
     {
-        return $this->phoneNumber;
+        return $this->bird;
     }
 
     /**
-     * Set species
+     * Set user
      *
-     * @param string $species
+     * @param \Audobon\Domain\Entity\User $user
      *
      * @return Sighting
      */
-    public function setSpecies($species)
+    public function setUser(\Audobon\Domain\Entity\User $user = null)
     {
-        $this->species = $species;
+        $this->user = $user;
 
         return $this;
     }
 
     /**
-     * Get species
+     * Get user
      *
-     * @return string
+     * @return \Audobon\Domain\Entity\User
      */
-    public function getSpecies()
+    public function getUser()
     {
-        return $this->species;
-    }
-
-    /**
-     * Set description
-     *
-     * @param string $description
-     *
-     * @return Sighting
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
+        return $this->user;
     }
 }
 

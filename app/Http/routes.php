@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['uses' => 'SightingController@index']);
+Route::get('create', ['uses' => 'SightingController@create']);
+Route::post('create', ['uses' => 'SightingController@store']);
